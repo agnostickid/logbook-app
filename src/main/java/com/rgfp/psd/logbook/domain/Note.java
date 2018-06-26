@@ -53,7 +53,15 @@ public class Note {
     }
 
     public String getSummary() {
-        // not implemented
-        return "";
+        String summary = getContent();
+        if (summary != null) {
+            if (summary.length() > 15)
+                return summary.substring(0, 15);
+            else
+                return summary;
+        }else{
+            return "";
+        }
+
     }
 }
