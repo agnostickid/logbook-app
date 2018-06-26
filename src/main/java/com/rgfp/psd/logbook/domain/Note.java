@@ -64,4 +64,12 @@ public class Note {
         }
 
     }
+
+    public Note clone(){
+        Note note = new Note();
+        note.setTitle(this.title);
+        note.setContent(this.content);
+        note.setTimestamp(LocalDateTime.now().plusHours(1));
+        return note;
+    }
 }

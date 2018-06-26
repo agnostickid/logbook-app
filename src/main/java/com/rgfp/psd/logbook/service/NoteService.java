@@ -77,4 +77,10 @@ public class NoteService {
     public void setNoteRepository(NoteRepository noteRepository) {
         this.noteRepository = noteRepository;
     }
+
+    public void cloneNote(long id){
+        Note note = this.findOne(id).get();
+        Note cloneNote = note.clone();
+        this.saveNote(cloneNote);
+    }
 }
